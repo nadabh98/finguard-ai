@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+lightgbm
+shap
+joblib
+pyarrow
+pytest
+# phases suivantes (décommenter le moment venu)
+# fastapi
+# uvicorn
+# streamlit
+# plotly
+# mlflow
+# evidently
