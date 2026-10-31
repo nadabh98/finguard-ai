@@ -13,3 +13,5 @@ pytest
 # plotly
 # mlflow
 # evidently
+streamlit
+requests
