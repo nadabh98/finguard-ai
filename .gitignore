@@ -11,3 +11,5 @@ exports/*
 !exports/.gitkeep
 mlruns/
 .pytest_cache/
+mlflow.db
+mlartifacts/

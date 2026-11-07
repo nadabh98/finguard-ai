@@ -112,4 +112,21 @@ PYTHONPATH=src uvicorn finguard.api:app --port 8080
 - [x] Déploiement Cloud Run
 - [ ] Console analyste (Streamlit)
 - [ ] Export des données scorées et tableau de bord Power BI
-- [ ] MLflow, détection de drift, GitHub Actions
+- [x] MLflow, surveillance du drift (PSI), GitHub Actions
+
+## Suivi des expériences et surveillance
+
+**MLflow** : chaque modèle est enregistré avec ses paramètres, ses métriques et ses fichiers (`python -m finguard.track`, puis `mlflow ui --backend-store-uri sqlite:///mlflow.db`).
+
+![Runs MLflow](docs/images/mlflow_runs.png)
+![Comparaison MLflow](docs/images/mlflow_compare.png)
+
+**Surveillance du drift** : un PSI hebdomadaire par variable est calculé par rapport aux deux premières semaines (`python -m finguard.monitor`). Une simulation (`--simulate`) augmente les montants de 80 % pour montrer la détection. Sur les données synthétiques utilisées ici, aucune dérive réelle n'est attendue.
+
+![Surveillance](docs/images/app_surveillance.png)
+![Simulation de dérive](docs/images/app_surveillance_derive.png)
+
+## Prochaines étapes
+- Evidently pour des rapports de drift plus détaillés
+- Terraform pour décrire l'infrastructure GCP
+- Réentraînement automatique déclenché par le PSI

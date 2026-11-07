@@ -15,3 +15,4 @@ pytest
 # evidently
 streamlit
 requests
+mlflow

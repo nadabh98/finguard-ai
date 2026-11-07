@@ -7,6 +7,7 @@ from pathlib import Path
 import pandas as pd
 import requests
 import streamlit as st
+from drift_page import page_drift
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPORTS, MODELS = ROOT / "exports", ROOT / "models"
@@ -194,7 +195,7 @@ def page_performance():
     st.caption("Données synthétiques : ces performances ne se transposent pas telles quelles à une vraie banque.")
 
 
-PAGES = {"Simulateur": page_simulateur, "File d'alertes": page_alertes, "Performance": page_performance}
+PAGES = {"Simulateur": page_simulateur, "File d'alertes": page_alertes, "Performance": page_performance, "Surveillance": page_drift}
 st.sidebar.title("🛡️ FinGuard AI")
 PAGES[st.sidebar.radio("Navigation", list(PAGES))]()
 st.sidebar.caption("Console analyste")
