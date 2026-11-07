@@ -110,8 +110,8 @@ PYTHONPATH=src uvicorn finguard.api:app --port 8080
 - [x] Calibration, niveaux de risque, explications
 - [x] API FastAPI, Docker, tests
 - [x] Déploiement Cloud Run
-- [ ] Console analyste (Streamlit)
-- [ ] Export des données scorées et tableau de bord Power BI
+- [x] Console analyste (Streamlit)
+- [x] Export des données scorées et tableau de bord Power BI
 - [x] MLflow, surveillance du drift (PSI), GitHub Actions
 
 ## Suivi des expériences et surveillance
